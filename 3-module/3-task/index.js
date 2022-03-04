@@ -1,3 +1,10 @@
 function camelize(str) {
-  // ваш код...
+  return str
+    .split("")
+    .reduce((prevVal, curVal) => {
+    if (prevVal.endsWith("-")) {
+      return prevVal.replace("-", curVal.toUpperCase());
+    }
+    return prevVal + curVal;
+  }, "");
 }
